@@ -1,0 +1,45 @@
+#include "resource.h"
+#include "winuser.h"
+
+CAC_ICON	ICON	"cross.ico"
+CAC_ICON2	ICON	"circle.ico"
+PIC_CROSS	BITMAP	"cross.bmp"
+PIC_CIRCLE	BITMAP	"circle.bmp"
+PIC_EMPTY	BITMAP	"empty.bmp"
+
+STRINGTABLE
+{
+	STR_TITLE,		"Gomoku"
+	STR_PL1WON,		"Player 1 won."
+	STR_PL2WON,		"Player 2 won."
+	STR_DRAW,		"Draw."
+	STR_PL1TURN,	"Player 1 moves."
+	STR_PL2TURN,	"Player 2 moves."
+	STR_WAIT,		"Waiting for a peer..."
+	STR_CONNECT,	"Connecting..."
+	STR_NETERROR,	"Network error occurred."
+}
+
+MENU_MAIN MENU
+{
+	POPUP "&Game"
+	{
+		MENUITEM "&New game", MENU_NEWGAME
+		MENUITEM SEPARATOR
+		MENUITEM "&Human vs Human", MENU_HVSH
+		MENUITEM "Hu&man vs Computer", MENU_HVSC, CHECKED
+		MENUITEM "&Computer vs Human", MENU_CVSH
+		MENUITEM "Human vs N&etwork Player", MENU_HVSN
+		MENUITEM "Ne&twork Player vs Human", MENU_NVSH
+		MENUITEM SEPARATOR
+		MENUITEM "&Quit", MENU_QUIT
+	}
+}
+
+DLG_NETPROMPT DIALOGEX 100, 100, 160, 50
+CAPTION "Enter your opponent's IP address"
+STYLE WS_VISIBLE | WS_CAPTION | DS_CENTER
+{
+EDITTEXT DLG_EDIT, 10, 10, 140, 10, WS_VISIBLE
+PUSHBUTTON "OK", DLG_BUTTON, 60, 30, 40, 10, WS_VISIBLE | BS_DEFPUSHBUTTON
+}
