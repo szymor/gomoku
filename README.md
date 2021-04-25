@@ -2,10 +2,13 @@
 
 [Description and rules](https://en.wikipedia.org/wiki/Gomoku)
 
-### Technologies used in the project:
-* Microsoft Visual Studio 2008 Express Edition
-* C++
-* WinAPI
+![screenshot](screenshot.png)
+
+### Tools
+* Microsoft Visual Studio 2008 Express Edition,
+* C++,
+* WinAPI.
 
 ### Known issues
-Networking.
+* networking,
+* AI easy to beat.
